@@ -1,0 +1,88 @@
+table {
+    width: 100%;
+  }
+  
+  
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+  
+  .text-align-span {
+  
+    align-content: flex-end;
+  }
+  
+  table.tbl {
+    width: 300px;
+    border-collapse: collapse;
+  }
+  
+  .tbl th,
+  .tbl td {
+    border: solid 1px #777;
+    padding: 5px;
+  }
+  
+  .tbl0 th,
+  .tbl0 td {
+    padding: 5px;
+  }
+  
+  .tbl0 span {
+    margin-right: 20px; 
+  
+  }
+  
+  .tbl th {
+    background: #3630a3;
+    color: white;
+  }
+  
+  #mytable {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  #mytable0 {
+   /*  border: 1px solid black; */  
+    margin-left: auto;
+    margin-right: -530px;
+  }
+  
+  .text-criterios {
+    text-align: center;
+    background: rgb(182, 233, 182);
+  }
+  
+
+  
+  

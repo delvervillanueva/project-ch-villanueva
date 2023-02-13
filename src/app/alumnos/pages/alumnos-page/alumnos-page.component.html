@@ -1,0 +1,108 @@
+<mat-toolbar>
+    <span> <strong> Alumnos</strong> </span>
+    <div class="example-spacer"></div>
+    <button  mat-raised-button color="primary" routerLink="crear-alumnos">Agregar</button>
+</mat-toolbar>
+<br>
+    <mat-divider></mat-divider>
+  
+   <!--  <div *ngIf="listAlumnos.length > 0">  -->
+      <table mat-table [dataSource]="listAlumnos" class="mat-elevation-z8">
+  
+        
+          <!-- Columna nombres -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> N° </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+              <!-- Columna nombres-->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombres </th>
+                <td mat-cell *matCellDef="let element"
+                [ngStyle]="{'color': element.first_name == 'George' ? 'red' : 'green'}" 
+                > {{element.first_name + ' ' + element.last_name}} </td>
+            </ng-container>
+        
+          <!-- Columna correo -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Correo </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+                
+  
+            <!-- Columna acciones-->
+          <ng-container matColumnDef="acciones">
+              <tr><th mat-header-cell *matHeaderCellDef> Acciones </th></tr>
+              <tr>
+                <td mat-cell *matCellDef="let row; let i = index " style="width:20%">
+                  <button mat-icon-button color="accent"  title="Editar"><mat-icon>edit</mat-icon></button>
+                  <button mat-icon-button color="primary" title="Eliminar" (click)="eliminarAlumno(i)"><mat-icon>delete</mat-icon></button>
+  
+                 <!--  <button (click)="eliminarAlumno(i)" mat-icon-button color="primary" title="Eliminar"><mat-icon>delete</mat-icon></button> -->
+  
+                </td>
+              <tr>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator
+        [length]="totalAlumnos | async"
+        [pageSize]="perPage"
+        [pageSizeOptions]="perPageOptions"
+        (page)="onPageChange($event)"
+        aria-label="Select page">
+      </mat-paginator>
+      
+
+     <!--  </div>
+      <h2 *ngIf="listAlumnos.length == 0"> No hay Alumnos para mostrar</h2>
+   -->
+<!--    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> <br> <br> -->
+  
+   <div class="container">
+    <div class="row">
+      <!-- table ONE -->
+        <div class="col">
+          <table class="tbl0" id="mytable0">
+            <!-- <span class="text-criterios">Criterios de evaluación</span> <br>  -->
+          <tr>
+            <span class="badge rounded-pill text-bg-success">Aprobado</span>
+            <span class="badge rounded-pill text-bg-danger">Desaprobado</span>
+          </tr>
+     
+  
+        </table>
+      </div>
+        <!-- table TWO -->
+        <div class="col">
+          <table class="tbl" id="mytable">
+            <span class="text-criterios">Criterios de evaluación</span> <br> 
+          <tr>
+            <td style="background: aliceblue;">Nota Máxima</td>
+            <td style="background: aliceblue;">20</td>
+          </tr>
+          <tr>
+            <td style="background: aliceblue;">Nota Mínima</td>
+            <td style="background: aliceblue;">11</td>
+          </tr>
+          <tr>
+            <td style="background: aliceblue;">Total de aprobados</td>
+            <td style="background: aliceblue;">15</td>
+          </tr>
+        
+          <tr>
+            <td style="background: aliceblue;">Total de desaprobados</td>
+            <td style="background: aliceblue;">15</td>
+          </tr>
+        </table>
+      </div>
+        
+    </div>
+  </div>
+
+
+
