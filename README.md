@@ -5,8 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Install
 
 Instalar: 
-    NPM INSTALL
-    NGRX
+    •NPM INSTALL
+    •NGRX
 
 ## Actvidades 
     • NGRX(Rest, paginación)
