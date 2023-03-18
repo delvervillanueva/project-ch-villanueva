@@ -5,8 +5,6 @@ import { AlumnosEffects } from './store/alumnos.effects';
 import { StoreModule } from '@ngrx/store';
 import { alumnosFeatureKey, reducer } from './store/alumnos.reducer';
 
-
-
 @NgModule({
   declarations: [],
   imports: [

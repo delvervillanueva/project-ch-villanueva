@@ -1,30 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './layout.component';
 import { MenuIzqComponent } from './components/menu-izq/menu-izq.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { RouterModule } from '@angular/router';
 import { AngularMaterialModule } from '../shared/modules/angular-material.module';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutRoutingModule } from './layout-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    LayoutComponent,
     MenuIzqComponent,
     NavbarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    LayoutRoutingModule
   ],
-  exports: [
-    MenuIzqComponent,
-    ToolbarComponent
 
-  ]
 })
 export class LayoutModule { }

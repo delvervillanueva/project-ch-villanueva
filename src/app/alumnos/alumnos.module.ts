@@ -7,12 +7,10 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import { CrearAlumnosComponent } from './pages/crear-alumnos/crear-alumnos.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     AlumnosPageComponent,
-    CrearAlumnosComponent
+    CrearAlumnosComponent,
   ],
   imports: [
     CommonModule,

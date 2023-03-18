@@ -6,6 +6,8 @@ import { loadAlumnoss } from '../../store/alumnos.actions';
 import { selectAlumnosArray, selectAlumnosState, selectTotalAlumnosNumber } from '../../store/alumnos.selectors';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
+import { AlumnosService } from 'src/app/servicios/alumnos.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -16,7 +18,6 @@ import { Observable } from 'rxjs';
 export class AlumnosPageComponent  implements OnInit {
 
   listAlumnos: ListaAlumnosModel[] = []
-  //displayedColumns: string[] = ['nombres', 'grado', 'edad', 'sexo', 'promedio', 'acciones'];
   displayedColumns: string[] = ['id', 'name', 'email', 'acciones'];
   totalAlumnos: Observable<number>;
   public perPage = 6;
@@ -24,7 +25,7 @@ export class AlumnosPageComponent  implements OnInit {
 
   dataSource : MatTableDataSource<any>;
 
-  constructor( private store: Store){
+  constructor( private store: Store, private _alumnosService: AlumnosService, private _snackBar : MatSnackBar ){
     this.totalAlumnos = this.store.select(selectTotalAlumnosNumber);
   }
 
@@ -35,32 +36,21 @@ export class AlumnosPageComponent  implements OnInit {
       this.listAlumnos = listAlumnos
     })
 
-    
   }
-
 
   onPageChange(ev: PageEvent){
-   // console.log(ev);
    this.store.dispatch(loadAlumnoss({page: ev.pageIndex + 1, per_page: ev.pageSize}))
-
   }
 
+  eliminarAlumno(index: any): void {
+    this._alumnosService.eliminarAlumno(index);
 
-  eliminarAlumno(id: any): void {
-    console.log(id);
-/*     if(confirm('Estás de Eliminar a Alumno')) {
-      this._alumnosService.eliminarAlumno(id).subscribe(()=> {
-      const tempArr = this.listAlumnos.filter(alumno => alumno.id !== id);
-      this.listAlumnos = [...tempArr];
-    });
-  }
-    this.cargarAlumnos();
-
-    this._snackBar.open('El Alumno fue eliminado con éxito', '', {
+    this._snackBar.open('El Curso fue eliminado con éxito', '', {
       duration: 1500,
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
-    }); */
+    });
+
   }
 
 }

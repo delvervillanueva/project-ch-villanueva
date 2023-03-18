@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   // api: 'https://63c3fbc8a9085635752f52a9.mockapi.io/alumnos'
-  api: 'https://demo0169017.mockable.io/alumnos'
+  api: 'https://demo0169017.mockable.io/alumnos',
+  API_URL: 'http://localhost:3000'
 
 };
 

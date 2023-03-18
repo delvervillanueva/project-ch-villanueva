@@ -1,0 +1,59 @@
+<div class="container">
+    <p>
+        <mat-toolbar>
+          <span class="format-create-curso">Crear Curso</span>
+        </mat-toolbar>
+      </p>
+      
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="car text-center">
+                <div class="card-body bg-dark ">
+                    <br>
+                    <form autocomplete="off" class="mt-4" [formGroup]="crearCurso" (ngSubmit)="guardar()">
+                        <div class="row" >
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Nombres" formControlName="nombres"
+                                    [class.is-invalid]="nombreNoValido">
+                                <small *ngIf="nombreNoValido" class="text-danger">
+                                    Ingresar al menos 20 caractéres
+                                </small>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="grado" formControlName="grado"
+                                    [class.is-invalid]="gradoNoValido">
+                                <small *ngIf="gradoNoValido" class="text-danger">
+                                    Ingresar al menos 8 caractéres
+                                </small>>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="hora" formControlName="hora"
+                                        [class.is-invalid]="horaNoValido">
+                                    <small *ngIf="horaNoValido" class="text-danger">
+                                        Ingresar al menos 8 caractéres
+                                    </small>>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="promedio"
+                                        formControlName="promedio" [class.is-invalid]="promedioNoValido">
+                                    <small *ngIf="promedioNoValido" class="text-danger">
+                                        Ingresar al menos 8 caractéres
+                                    </small>>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-secondary mr-3" (click)="goBack()"
+                                style="margin-right: 20px;">Volver</button>
+                            <button type="submit" [disabled]="crearCurso.invalid" class="btn btn-dark btn-lg">Guardar</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

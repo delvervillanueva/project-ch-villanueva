@@ -13,7 +13,7 @@ export class CursosPageComponent {
 
 
   listCursos: ListaCursosModel[] = []
-  displayedColumns: string[] = ['nombres', 'grado', 'edad', 'promedio', 'acciones'];
+  displayedColumns: string[] = ['nombres', 'grado', 'hora', 'promedio', 'acciones'];
   dataSource : MatTableDataSource<any>;
   
 

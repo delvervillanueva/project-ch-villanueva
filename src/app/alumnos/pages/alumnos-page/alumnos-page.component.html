@@ -1,15 +1,14 @@
+
 <mat-toolbar>
     <span> <strong> Alumnos</strong> </span>
     <div class="example-spacer"></div>
-    <button  mat-raised-button color="primary" routerLink="crear-alumnos">Agregar</button>
+    <button disabled mat-raised-button color="primary" routerLink="crear-alumnos">Agregar</button>
 </mat-toolbar>
 <br>
     <mat-divider></mat-divider>
-  
    <!--  <div *ngIf="listAlumnos.length > 0">  -->
       <table mat-table [dataSource]="listAlumnos" class="mat-elevation-z8">
   
-        
           <!-- Columna nombres -->
           <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> N° </th>
@@ -39,8 +38,6 @@
                   <button mat-icon-button color="accent"  title="Editar"><mat-icon>edit</mat-icon></button>
                   <button mat-icon-button color="primary" title="Eliminar" (click)="eliminarAlumno(i)"><mat-icon>delete</mat-icon></button>
   
-                 <!--  <button (click)="eliminarAlumno(i)" mat-icon-button color="primary" title="Eliminar"><mat-icon>delete</mat-icon></button> -->
-  
                 </td>
               <tr>
           </ng-container>
@@ -57,12 +54,6 @@
         aria-label="Select page">
       </mat-paginator>
       
-
-     <!--  </div>
-      <h2 *ngIf="listAlumnos.length == 0"> No hay Alumnos para mostrar</h2>
-   -->
-<!--    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> <br> <br> -->
-  
    <div class="container">
     <div class="row">
       <!-- table ONE -->

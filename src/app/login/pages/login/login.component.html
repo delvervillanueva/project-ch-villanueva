@@ -1,33 +1,44 @@
-<div class="contenedor-login"  [style.background-image]="'url('+imagenURL+')'">
-  <div class="container">
-    <div class="row arriba"></div>
-    <div class="row">
-      <div class="col-md-4 offset-md-4 col-8 offset-2">
-        <mat-card class="mat-elevation-z8">
-          <form [formGroup]="formulario">
-            <mat-card-header>
-              <mat-card-title class="login-header">Inicia sesión</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <div class="col-md-12">
-                <mat-form-field>
-                  <mat-label>Correo electrónico</mat-label>
-                  <input matInput placeholder="ejemplo@veterinaria.com" formControlName="email">
-                </mat-form-field>
-              </div>
-              <div class="col-md-12">
-                <mat-form-field>
-                  <mat-label>Contraseña</mat-label>
-                  <input type="password" matInput placeholder="Contraseña" formControlName="password">
-                </mat-form-field>
-              </div>
-              <div class="col-md-12 col-boton">
-                <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="formulario.invalid">Iniciar sesión</button>
-              </div>
-            </mat-card-content>
-          </form>
-        </mat-card>
-      </div>
-    </div>
-  </div>
+<div class="login-form">
+  <mat-card>
+    <mat-card-content>
+      <h1 class="login-color">LOGIN</h1>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-form-field class="full-width-input mt-5">
+          <input
+            text="text"
+            formControlName="username"
+            matInput
+            placeholder="Usuario"
+            required
+          />
+          <mat-error *ngIf="isValidField('username')" class="text-red-500">
+              {{ getErrorMessage("username") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input separator">
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="Contraseña"
+            required
+          />
+          
+           <mat-error *ngIf="isValidField('password')" class="text-red-500">
+               {{ getErrorMessage("password") }}
+            </mat-error>
+        </mat-form-field>
+        <button
+          [disabled]="loginForm.invalid"
+          type="submit"
+          mat-raised-button
+          color="primary"
+        >
+          Iniciar Sesión
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
+

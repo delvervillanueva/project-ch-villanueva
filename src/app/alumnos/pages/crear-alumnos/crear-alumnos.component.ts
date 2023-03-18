@@ -53,18 +53,6 @@ export class CrearAlumnosComponent {
     return this.crearAlumno.get('correo')?.invalid && this.crearAlumno.get('correo')?.touched
   }
 
-/*   get edadNoValido() {
-    return this.crearAlumno.get('edad')?.invalid && this.crearAlumno.get('edad')?.touched
-  }
-
-  get sexoNoValido() {
-    return this.crearAlumno.get('sexo')?.invalid && this.crearAlumno.get('sexo')?.touched
-  }
-
-  get promedioNoValido() {
-    return this.crearAlumno.get('promedio')?.invalid && this.crearAlumno.get('promedio')?.touched
-  }
- */
   agregarEditarCliente(){
 
   }
@@ -75,27 +63,6 @@ export class CrearAlumnosComponent {
 
   editarAlumno()  {
   }
-
-/*   guardar() {
-    const alumno : ListaAlumnosModel = {
-      id: this.crearAlumno.value.id,
-      nombres: this.crearAlumno.value.nombres,
-      grado: this.crearAlumno.value.grado,
-      edad: this.crearAlumno.value.edad,
-      sexo: this.crearAlumno.value.sexo,
-      promedio:  this.crearAlumno.value.promedio,
-    }
-
-    this.alumnosService.agregarAlumno(alumno);
-    this.router.navigate(['/list-alumnos']);
-
-    this._snackBar.open('El Alumno fue agregado con éxito', '', {
-      duration: 3000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom'
-    });
-
-  } */
 
 
 }
